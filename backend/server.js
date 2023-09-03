@@ -4,7 +4,7 @@ var routes = require('./routes/routes');
 var mongoose = require('mongoose');
 const cors = require('cors');
 
-mongoose.connect("mongodb+srv://simranmistry:admin.123@cluster0.bshhvdo.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://@cluster0.bshhvdo.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }, function checkDB(error) {
