@@ -2,11 +2,8 @@ import React, { useContext } from 'react'
 import { DataContext } from './context/DataProvider';
 
 
-
-// const Employees = ({employees}) => {
 const Employees = () => {
     const { employees, setUsers } = useContext(DataContext);
-    // console.log('here', employees);
     return (
         <div className="container mt-5">
             <table className="table1" class="table" align="center">
