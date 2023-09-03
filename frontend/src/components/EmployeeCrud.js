@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState, useContext } from "react";
+import {useState, useContext } from "react";
 import './EmployeeCrud.css';
 
 import { DataContext } from "./context/DataProvider";
@@ -14,18 +14,8 @@ function EmployeeCrud() {
     const [country, setCountry] = useState("");
     const [phone, setMobile] = useState("");
     const [username, setUsername] = useState("");
-    // const [employees, setUsers] = useState([]);
+
     const { employees, setUsers } = useContext(DataContext);
-
-    // useEffect(() => {
-    //     (async () => await Load())();
-    // }, []);
-
-    // async function Load() {
-    //     const result = await axios.get("http://localhost:8000/user/getAll");
-    //     setUsers(result.data.data);
-    //     console.log(result.data);
-    // }
 
     async function save(event) {
         event.preventDefault();
@@ -46,7 +36,7 @@ function EmployeeCrud() {
             setCountry("");
             setMobile("");
             setUsername("")
-            // Load();
+        
         } catch (err) {
             alert("User Registration Failed");
         }
@@ -65,7 +55,7 @@ function EmployeeCrud() {
     async function DeleteEmployee(_id) {
         await axios.delete("http://localhost:8000/user/delete/" + _id);
         alert("Employee deleted Successfully");
-        // Load();
+ 
     }
 
     async function update(event) {
@@ -92,7 +82,7 @@ function EmployeeCrud() {
             setCountry("");
             setMobile("");
             setUsername("")
-            // Load();
+     
         } catch (err) {
             alert(err);
         }
@@ -248,10 +238,6 @@ function EmployeeCrud() {
                     })}
                 </table>
             </div>
-
-            {/* <div style={{display:'block'}}>
-                <Employees employees = {employees} />
-            </div> */}
         </div>
     );
 }
